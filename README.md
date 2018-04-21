@@ -3,7 +3,7 @@
 Converts FreeMind MindMaps into AIML (Artificial Intelligence Markup Language)
 
 <p align="center">
-<img src=" "
+<img src="https://raw.githubusercontent.com/xrazybud/mm2aiml/master/miv-example.png"
 width=800>
 </p>
 
