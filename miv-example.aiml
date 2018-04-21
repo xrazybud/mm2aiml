@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml version="1.0">
+
+<meta name="author" content="Alex Bylund"/>
+<meta name="language" content="en"/>
+
+<category>
+<pattern>*</pattern>
+<template>
+</template>
+</category>
+
+<category>
+<pattern>MIV BATTLE</pattern>
+<template>
+<random>
+<li>
+kapow kapow!
+<random>
+<li>
+you hit
+</li>
+<li>
+you kicked
+</li>
+<li>
+you punched
+</li>
+</random>
+me for
+<random>
+<li>11</li>
+<li>101</li>
+<li>9001</li>
+<li>4</li>
+</random>
+damage! holy shit! i'm bleeding making me the victor!
+</li>
+<li>
+you missed me!
+</li>
+<li>
+i blocked you!
+</li>
+<li>
+you broke your own finger!
+</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>WHAT IS YOUR FAVORITE MOVIE</pattern>
+<template>
+<random>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+</random>
+<think>
+<set name="it">movie</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>WHAT IS IT LIKE</pattern>
+<template>
+<condition name="it" value="movie">
+<random>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+<li>
+asdf
+</li>
+</random>
+</condition>
+</template>
+</category>
+
+<category>
+<pattern>* MIV *</pattern>
+<template>
+wat
+</template>
+</category>
+
+<category>
+<pattern>WAT</pattern>
+<template>
+<system>
+~/irc/aiml/miv/check-crawler
+</system>
+</template>
+</category>
+
+</aiml>
