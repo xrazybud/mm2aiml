@@ -90,14 +90,13 @@ int main(int argc, char *argv[]){
 
       if (depth == 1) { // first child nodes
          if (nodeLine) {
-            //printf ("%d %d\n", 'a', 'A'); 97 = a - 32 = A
-            //printf ("%d %d\n", 'b', 'B'); 98 = b - 32 = B
+
+            // capitalize the pattern
             patternCaps = lineBuffer;
-            count = 0;
             while (*patternCaps != '\0') {
-               if (*patternCaps > 96) *patternCaps = *patternCaps-32;
-               patternCaps++; count++;
+               if (*patternCaps > 96) *patternCaps = *patternCaps-32; patternCaps++;
             }
+
             printf("<category>\n");
             printf("<pattern>%s</pattern>\n", lineBuffer);
             printf("<template>\n");
