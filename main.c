@@ -57,11 +57,15 @@ int main(int argc, char *argv[]){
             while (*tagtemp != ' ' && *tagtemp != '\0') {tagstack[depth][count] = *tagtemp; tagtemp++; count++;}
             tagstack[depth][count] = '\0';
 
+            /* should look for them all at once in one function
+               but the strings are so small it might just be a
+               problem with 3GB+ mind maps */
             str_replace(lineBuffer, "&quot;", "\"");
             str_replace(lineBuffer, "&apos;", "'");
             str_replace(lineBuffer, "&lt;", "<");
             str_replace(lineBuffer, "&gt;", ">");
             str_replace(lineBuffer, "&#xa;", "\n");
+            str_replace(lineBuffer, "&amp;", "&");
          }
          if (!singleNodeLine && depth > 1) {
             printf("<%s>\n", lineBuffer);
@@ -92,7 +96,6 @@ int main(int argc, char *argv[]){
             count = 0;
             while (*patternCaps != '\0') {
                if (*patternCaps > 96) *patternCaps = *patternCaps-32;
-               lineBuffer[count] = *patternCaps;
                patternCaps++; count++;
             }
             printf("<category>\n");
