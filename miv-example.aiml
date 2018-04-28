@@ -12,6 +12,13 @@
 </category>
 
 <category>
+<pattern>* MIV *</pattern>
+<template>
+wat
+</template>
+</category>
+
+<category>
 <pattern>MIV BATTLE</pattern>
 <template>
 <random>
@@ -99,18 +106,20 @@ asdf
 </category>
 
 <category>
-<pattern>* MIV *</pattern>
-<template>
-wat
-</template>
-</category>
-
-<category>
-<pattern>WAT</pattern>
+<pattern>IS THE CRAWLER RUNNING</pattern>
 <template>
 <system>
 ~/irc/aiml/miv/check-crawler
 </system>
+</template>
+</category>
+
+<category>
+<pattern>IS THE * CRAWLER * RUNNING</pattern>
+<template>
+<srai>
+is the crawler running
+</srai>
 </template>
 </category>
 

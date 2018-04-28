@@ -67,11 +67,11 @@ int main(int argc, char *argv[]){
             str_replace(lineBuffer, "&#xa;", "\n");
             str_replace(lineBuffer, "&amp;", "&");
          }
-         if (!singleNodeLine && depth > 1) {
+         if (!singleNodeLine && depth > 2) {
             printf("<%s>\n", lineBuffer);
             depth++;
          }
-         if (!singleNodeLine && depth == 0) {
+         if (!singleNodeLine && depth < 2) {
             depth++; // move from main node
             continue;
          }
@@ -79,16 +79,16 @@ int main(int argc, char *argv[]){
 
       // top of the mind so print it normally
       if (singleNodeLine) {
-         if (depth > 1) printf("%s\n", lineBuffer);
+         if (depth > 2) printf("%s\n", lineBuffer);
       }
 
       // write the closing tag for the closing node
       if (endNode) {
-         if (depth > 2) printf("</%s>\n", tagstack[depth-1]);
+         if (depth > 3) printf("</%s>\n", tagstack[depth-1]);
          depth--;
       }
 
-      if (depth == 1) { // first child nodes
+      if (depth == 2) { // first child nodes
          if (nodeLine) {
 
             // capitalize the pattern
