@@ -123,4 +123,14 @@ is the crawler running
 </template>
 </category>
 
+<topic name="dunno">
+<category>
+<pattern>HEY</pattern>
+<template>
+<i don't know why i'm saying this, but hi>
+</i>
+</template>
+</category>
+</topic>
+
 </aiml>

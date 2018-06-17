@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#cccccc" COLOR="#000000" CREATED="1510481958200" ID="ID_1175123910" MODIFIED="1524946825403" STYLE="bubble">
+<node BACKGROUND_COLOR="#cccccc" COLOR="#000000" CREATED="1510481958200" ID="ID_1175123910" MODIFIED="1529203578293" STYLE="bubble">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -11,7 +11,7 @@
       
     </p>
     <p style="text-align: center">
-      <b><font size="5">miv bot</font></b>
+      <b><font size="4">miv bot</font></b>
     </p>
   </body>
 </html>
@@ -101,17 +101,26 @@
 </node>
 </node>
 </node>
-<node CREATED="1524946224385" ID="ID_1061999712" MODIFIED="1524946225958" POSITION="left" TEXT="functions">
+<node CREATED="1524946224385" ID="ID_1061999712" MODIFIED="1525201645019" POSITION="left" TEXT="functions">
 <node COLOR="#0033ff" CREATED="1510485513478" ID="ID_819412586" MODIFIED="1524947061116" TEXT="is the crawler running">
-<node COLOR="#00b439" CREATED="1510485537225" ID="ID_275785181" MODIFIED="1510973395178" TEXT="system">
+<node COLOR="#00b439" CREATED="1510485537225" ID="ID_275785181" MODIFIED="1529203759496" TEXT="system">
 <node COLOR="#990000" CREATED="1510784757384" ID="ID_248872922" MODIFIED="1510973395178" TEXT="~/irc/aiml/miv/check-crawler"/>
 </node>
 </node>
 </node>
 <node CREATED="1524946363253" ID="ID_1665390871" MODIFIED="1524946365368" POSITION="left" TEXT="aliases">
-<node COLOR="#0033ff" CREATED="1524161753919" ID="ID_1660265644" MODIFIED="1524167044670" TEXT="is the * crawler * running">
+<node COLOR="#0033ff" CREATED="1524161753919" ID="ID_1660265644" MODIFIED="1529203739763" TEXT="is the * crawler * running">
+<edge COLOR="#808080"/>
 <node COLOR="#00b439" CREATED="1524162062356" ID="ID_1711319307" MODIFIED="1524162318079" TEXT="srai">
 <node COLOR="#990000" CREATED="1524162072037" ID="ID_822263793" MODIFIED="1524162318079" TEXT="is the crawler running"/>
+</node>
+</node>
+</node>
+<node CREATED="1529203111039" ID="ID_855816964" MODIFIED="1529203250298" POSITION="left" TEXT="topic name=&quot;dunno&quot;">
+<node COLOR="#0033ff" CREATED="1529203129290" ID="ID_720251846" MODIFIED="1529203751886" TEXT="hey">
+<node COLOR="#00b439" CREATED="1529203138322" ID="ID_596217964" MODIFIED="1529203750099" TEXT="i don&apos;t know why i&apos;m saying this, but hi">
+<edge COLOR="#808080" WIDTH="thin"/>
+<font NAME="DejaVu Sans Mono" SIZE="12"/>
 </node>
 </node>
 </node>

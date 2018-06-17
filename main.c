@@ -72,7 +72,10 @@ int main(int argc, char *argv[]){
             depth++;
          }
          if (!singleNodeLine && depth < 2) {
-            depth++; // move from main node
+            if ( strstr(strdup(tagstack[depth]), "topic") != NULL ) {
+               printf("<%s>\n", lineBuffer);
+            }
+            depth++; // move from main or organizing/topic node
             continue;
          }
       }
@@ -95,6 +98,8 @@ int main(int argc, char *argv[]){
             patternCaps = lineBuffer;
             while (*patternCaps != '\0') {
                if (*patternCaps > 96) *patternCaps = *patternCaps-32; patternCaps++;
+               //ctype.h .. more portable?
+               //*patternCaps = islower(*patternCaps) ? toupper(*patternCaps) : *patternCaps;
             }
 
             printf("<category>\n");
@@ -104,7 +109,11 @@ int main(int argc, char *argv[]){
          }
          if (endNode || singleNodeLine) {
             printf("</template>\n");
-            printf("</category>\n\n");
+            printf("</category>\n");
+            if ( strstr(strdup(tagstack[depth-1]), "topic") != NULL ) {
+               printf("</topic>\n");
+            }
+            printf("\n");
          }
       }
 
