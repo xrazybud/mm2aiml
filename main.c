@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
    printf("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n\n");
    printf("<aiml version=\"1.0\">\n\n");
    printf("<meta name=\"author\" content=\"Alex Bylund\"/>\n");
-   printf("<meta name=\"language\" content=\"en\"/>\n\n");
+   printf("<meta name=\"language\" content=\"en\"/>\n");
 
    char *lineRead, *line, *lineText, lineBuffer[10000], *tagtemp, *patternCaps;
    char tagstack[100][100];
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
          }
          if (!singleNodeLine && depth < 2) {
             if ( strstr(strdup(tagstack[depth]), "topic") != NULL ) {
-               printf("<%s>\n", lineBuffer);
+               printf("\n<%s>", lineBuffer);
             }
             depth++; // move from main or organizing/topic node
             continue;
@@ -102,7 +102,7 @@ int main(int argc, char *argv[]){
                //*patternCaps = islower(*patternCaps) ? toupper(*patternCaps) : *patternCaps;
             }
 
-            printf("<category>\n");
+            printf("\n<category>\n");
             printf("<pattern>%s</pattern>\n", lineBuffer);
             printf("<template>\n");
             if (!singleNodeLine) depth++;
@@ -110,11 +110,17 @@ int main(int argc, char *argv[]){
          if (endNode || singleNodeLine) {
             printf("</template>\n");
             printf("</category>\n");
-            if ( strstr(strdup(tagstack[depth-1]), "topic") != NULL ) {
-               printf("</topic>\n");
-            }
-            printf("\n");
+            //if ( strstr(strdup(tagstack[depth]), "topic") != NULL ) {
+            //   printf("</topic>\n");
+            //}
+            //printf("\n");
          }
+      }
+
+      if (depth == 1) {
+         if ( strstr(strdup(tagstack[depth]), "topic") != NULL )
+            printf("</topic>\n\n");
+         //printf("\n");
       }
 
    }
