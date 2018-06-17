@@ -98,7 +98,7 @@ int main(int argc, char *argv[]){
             patternCaps = lineBuffer;
             while (*patternCaps != '\0') {
                if (*patternCaps > 96) *patternCaps = *patternCaps-32; patternCaps++;
-               //ctype.h .. more portable?
+               // ctype.h .. more portable?
                //*patternCaps = islower(*patternCaps) ? toupper(*patternCaps) : *patternCaps;
             }
 
@@ -110,22 +110,17 @@ int main(int argc, char *argv[]){
          if (endNode || singleNodeLine) {
             printf("</template>\n");
             printf("</category>\n");
-            //if ( strstr(strdup(tagstack[depth]), "topic") != NULL ) {
-            //   printf("</topic>\n");
-            //}
-            //printf("\n");
          }
       }
 
       if (depth == 1) {
          if ( strstr(strdup(tagstack[depth]), "topic") != NULL )
-            printf("</topic>\n\n");
-         //printf("\n");
+            printf("</topic>\n");
       }
 
    }
 
-   printf("</aiml>\n");
+   printf("\n</aiml>\n");
 
    free(source);
 
