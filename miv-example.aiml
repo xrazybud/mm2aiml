@@ -127,8 +127,7 @@ is the crawler running
 <category>
 <pattern>HEY</pattern>
 <template>
-<i don't know why i'm saying this, but hi>
-</i>
+i don't know why i'm saying this, but hi
 </template>
 </category>
 </topic>

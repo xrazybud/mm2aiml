@@ -118,10 +118,7 @@
 </node>
 <node CREATED="1529203111039" ID="ID_855816964" MODIFIED="1529203250298" POSITION="left" TEXT="topic name=&quot;dunno&quot;">
 <node COLOR="#0033ff" CREATED="1529203129290" ID="ID_720251846" MODIFIED="1529203751886" TEXT="hey">
-<node COLOR="#00b439" CREATED="1529203138322" ID="ID_596217964" MODIFIED="1529203750099" TEXT="i don&apos;t know why i&apos;m saying this, but hi">
-<edge COLOR="#808080" WIDTH="thin"/>
-<font NAME="DejaVu Sans Mono" SIZE="12"/>
-</node>
+<node COLOR="#00b439" CREATED="1529203138322" ID="ID_596217964" MODIFIED="1529203750099" TEXT="i don&apos;t know why i&apos;m saying this, but hi"/>
 </node>
 </node>
 </node>
