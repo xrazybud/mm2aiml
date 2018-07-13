@@ -6,12 +6,14 @@ void str_replace(char *, const char *, const char *);
 
 int main(int argc, char *argv[]){
    char *source = NULL;
+   int rec = 1;
 
    if (argc == 1) {
       printf("\nusage: %s mindmap.mm\n\n", *argv);
       return 0;
    }
 
+   char *arg1 = *argv;
    FILE *fp = fopen(*++argv, "r");
    if (fp != NULL) {
       fseek(fp, 0L, SEEK_END);
@@ -22,14 +24,18 @@ int main(int argc, char *argv[]){
       fread(source, sizeof(char), bufsize, fp);
    }
    fclose(fp);
-
    //printf("%s", source);
-   printf("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n\n");
-   printf("<aiml version=\"1.0\">\n\n");
-   printf("<meta name=\"author\" content=\"Alex Bylund\"/>\n");
-   printf("<meta name=\"language\" content=\"en\"/>\n");
 
-   char *lineRead, *line, *lineText, lineBuffer[10000], *tagtemp, *patternCaps;
+   if ( argc == 2 ) {
+      printf("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n\n");
+      printf("<aiml>\n\n");
+      printf("<meta name=\"author\" content=\"Alex Bylund\"/>\n");
+      printf("<meta name=\"language\" content=\"en\"/>\n");
+      rec = 0;
+   }
+
+   char *line, lineBuffer[10000], *tagtemp, *patternCaps;
+   char *lineRead, *lineText, *lineLink;
    char tagstack[100][100];
    int depth = 0, count = 0;
    int nodeLine, endNode, singleNodeLine;
@@ -45,6 +51,7 @@ int main(int argc, char *argv[]){
 
       if (nodeLine) {
          lineText = strstr(strdup(lineRead), "TEXT=\"");
+         lineLink = strstr(strdup(lineRead), "LINK=\"");
 
          if (lineText != NULL) {
             count = 0;
@@ -78,6 +85,24 @@ int main(int argc, char *argv[]){
             depth++; // move from main or organizing/topic node
             continue;
          }
+
+         /* how a hack became a h4x0r1!111
+            recursively system calls itself... since strtok has its own internal state
+            note to future future proofing ^ */
+         if (lineLink != NULL) {
+            count = 0;
+            lineLink = strstr(lineLink, "\""); lineLink++;
+            while (*lineLink != '"') {lineBuffer[count] = *lineLink; lineLink++; count++;}
+            lineBuffer[count] = '\0';
+
+            char call[1000];
+            strcat(call, arg1); strcat(call, " "); strcat(call, lineBuffer); strcat(call, " "); strcat(call, "recursion");
+            fflush(stdout); system( call ); count = 0;
+
+            while (*call != '\0') call[count]='\0',count++;
+            nodeLine = endNode = singleNodeLine = 0;
+         }
+
       }
 
       // top of the mind so print it normally
@@ -120,7 +145,9 @@ int main(int argc, char *argv[]){
 
    }
 
-   printf("\n</aiml>\n");
+   if ( !rec ){
+      printf("\n</aiml>\n");
+   }
 
    free(source);
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<aiml version="1.0">
+<aiml>
 
 <meta name="author" content="Alex Bylund"/>
 <meta name="language" content="en"/>
@@ -17,6 +17,15 @@
 wat
 </template>
 </category>
+
+<topic name="dunno">
+<category>
+<pattern>HEY</pattern>
+<template>
+i don't know why i'm saying this, but hi
+</template>
+</category>
+</topic>
 
 <category>
 <pattern>MIV BATTLE</pattern>
@@ -123,13 +132,11 @@ is the crawler running
 </template>
 </category>
 
-<topic name="dunno">
 <category>
-<pattern>HEY</pattern>
+<pattern>OOGLY BOOGLY</pattern>
 <template>
-i don't know why i'm saying this, but hi
+hey this is supposed to be top secret!
 </template>
 </category>
-</topic>
 
 </aiml>
