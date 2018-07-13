@@ -118,7 +118,7 @@ asdf
 <pattern>IS THE CRAWLER RUNNING</pattern>
 <template>
 <system>
-~/irc/aiml/miv/check-crawler
+miv/bin/check-crawler
 </system>
 </template>
 </category>
