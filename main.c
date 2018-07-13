@@ -96,7 +96,7 @@ int main(int argc, char *argv[]){
             lineBuffer[count] = '\0';
 
             char call[1000];
-            strcat(call, arg1); strcat(call, " "); strcat(call, lineBuffer); strcat(call, " "); strcat(call, "recursion");
+            strcat(call, arg1); strcat(call, " "); strcat(call, lineBuffer); strcat(call, " recursion");
             fflush(stdout); system( call ); count = 0;
 
             while (*call != '\0') call[count]='\0',count++;
