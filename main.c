@@ -99,7 +99,7 @@ int main(int argc, char *argv[]){
             strcat(call, arg1); strcat(call, " "); strcat(call, lineBuffer); strcat(call, " recursion");
             fflush(stdout); system( call ); count = 0;
 
-            while (*call != '\0') call[count]='\0',count++;
+            while (call[count] != '\0') call[count]='\0',count++;
             nodeLine = endNode = singleNodeLine = 0;
          }
 
@@ -124,7 +124,7 @@ int main(int argc, char *argv[]){
             while (*patternCaps != '\0') {
                if (*patternCaps > 96) *patternCaps = *patternCaps-32; patternCaps++;
                // ctype.h .. more portable?
-               //*patternCaps = islower(*patternCaps) ? toupper(*patternCaps) : *patternCaps;
+               //*patternCaps = islower(*patternCaps) ? toupper(*patternCaps) : *patternCaps; patternCaps++;
             }
 
             printf("\n<category>\n");
